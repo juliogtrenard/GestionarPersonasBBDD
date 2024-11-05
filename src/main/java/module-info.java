@@ -1,6 +1,7 @@
 module es.juliogtrenard.gestionarpersonasBBDD {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens es.juliogtrenard.gestionarpersonasBBDD to javafx.fxml;
