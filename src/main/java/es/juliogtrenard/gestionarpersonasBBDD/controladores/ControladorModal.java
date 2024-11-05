@@ -179,6 +179,8 @@ public class ControladorModal {
         String apellidos = txtApellidos.getText();
         int edad = Integer.parseInt(txtEdad.getText());
 
+        persona = new Persona();
+
         persona.setNombre(nombre);
         persona.setApellidos(apellidos);
         persona.setEdad(edad);

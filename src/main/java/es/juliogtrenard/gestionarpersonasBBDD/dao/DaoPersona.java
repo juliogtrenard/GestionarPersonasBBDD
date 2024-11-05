@@ -2,25 +2,24 @@ package es.juliogtrenard.gestionarpersonasBBDD.dao;
 
 import es.juliogtrenard.gestionarpersonasBBDD.db.DBConnect;
 import es.juliogtrenard.gestionarpersonasBBDD.modelos.Persona;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Clase para las consultas con la BBDD
  */
 public class DaoPersona {
     /**
-     * Metodo que carga los datos de la tabla Persona y los devuelve para usarlos en un listado de personas
+     * Carga los datos de la tabla Persona y los devuelve para usarlos en un listado de personas
      *
      * @return listado de personas para cargar en un tableview
      */
-    public static ObservableList<Persona> cargarListado() {
+    public static ArrayList<Persona> cargarListado() {
         DBConnect conexion;
-        ObservableList<Persona> listadoDePersonas= FXCollections.observableArrayList();
+        ArrayList<Persona> listadoDePersonas = new ArrayList<>();
 
         try{
             conexion = new DBConnect();
@@ -33,16 +32,16 @@ public class DaoPersona {
                 String nombre = rs.getString("nombre");
                 String apellidos = rs.getString("apellidos");
                 int edad = rs.getInt("edad");
-                Persona mp = new Persona(id,nombre,apellidos,edad);
-                listadoDePersonas.add(mp);
+                Persona p = new Persona(id,nombre,apellidos,edad);
+                listadoDePersonas.add(p);
 
             }
             rs.close();
             conexion.closeConexion();
-        }catch (
-                SQLException e) {
+        }catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
         return listadoDePersonas;
     }
 

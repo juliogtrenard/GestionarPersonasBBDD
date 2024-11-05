@@ -50,8 +50,9 @@ public class HelloController {
     @FXML
     public void initialize() {
         listaPersonas = new ArrayList<>();
-
+        listaPersonas = DaoPersona.cargarListado();
         filtrarLista();
+        tvTabla.getItems().addAll(listaPersonas);
     }
 
     /**
@@ -111,7 +112,6 @@ public class HelloController {
                 listaPersonas.add(persona);
                 tvTabla.getItems().add(persona);
                 tvTabla.refresh();
-                confirmacion("Persona añadida correctamente");
             } else {
                 error("Error al añadir la persona");
             }
