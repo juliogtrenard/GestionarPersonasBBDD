@@ -5,6 +5,11 @@ package es.juliogtrenard.gestionarpersonasBBDD.modelos;
  */
 public class Persona {
     /**
+     * Id de la persona.
+     */
+    private int id;
+
+    /**
      * Nombre de la persona.
      */
     private String nombre;
@@ -26,10 +31,18 @@ public class Persona {
      * @param apellidos Los apellidos de la persona.
      * @param edad      La edad de la persona.
      */
-    public Persona(String nombre, String apellidos, int edad) {
+    public Persona(int id, String nombre, String apellidos, int edad) {
+        this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
+    }
+
+    /**
+     * Constructor vacío
+     */
+    public Persona() {
+
     }
 
     /**
@@ -84,5 +97,23 @@ public class Persona {
      */
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    /**
+     * Obtiene el id de la persona.
+     *
+     * @return El identificador único de la persona.
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Establece el id de la persona.
+     *
+     * @param id El nuevo id de la persona.
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

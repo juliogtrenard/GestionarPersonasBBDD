@@ -39,7 +39,7 @@ public class ControladorModal {
     /**
      * Maneja el evento de cerrar la ventana modal.
      *
-     * @param event El evento que activa este método.
+     * @param event El evento que activa este metodo.
      */
     @FXML
     public void cerrarVentana(ActionEvent event) {
@@ -51,7 +51,7 @@ public class ControladorModal {
      * Valida las entradas del usuario y, si son correctas,
      * crea una nueva instancia de {@link Persona} y la añade a la tabla.
      *
-     * @param event El evento que activa este método.
+     * @param event El evento que activa este metodo.
      */
     @FXML
     public void guardarPersona(ActionEvent event) {
@@ -179,7 +179,9 @@ public class ControladorModal {
         String apellidos = txtApellidos.getText();
         int edad = Integer.parseInt(txtEdad.getText());
 
-        persona = new Persona(nombre, apellidos, edad);
+        persona.setNombre(nombre);
+        persona.setApellidos(apellidos);
+        persona.setEdad(edad);
 
         mostrarAlertaValido("Persona añadida correctamente.");
     }

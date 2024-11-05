@@ -1,5 +1,6 @@
 package es.juliogtrenard.gestionarpersonasBBDD.controladores;
 
+import es.juliogtrenard.gestionarpersonasBBDD.dao.DaoPersona;
 import es.juliogtrenard.gestionarpersonasBBDD.modelos.Persona;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -103,8 +104,17 @@ public class HelloController {
         ControladorModal controller = loader.getController();
         Persona persona = controller.getPersona();
         if (persona != null) {
-            listaPersonas.add(persona);
-            tvTabla.getItems().add(persona);
+            int id = DaoPersona.insertar(persona);
+
+            if (id != -1) {
+                persona.setId(id);
+                listaPersonas.add(persona);
+                tvTabla.getItems().add(persona);
+                tvTabla.refresh();
+                confirmacion("Persona añadida correctamente");
+            } else {
+                error("Error al añadir la persona");
+            }
         }
     }
 
