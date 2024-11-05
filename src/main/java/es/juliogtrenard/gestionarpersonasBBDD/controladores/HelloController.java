@@ -154,6 +154,9 @@ public class HelloController {
 
         if (controller.getPersona() != null) {
             int indice = tvTabla.getSelectionModel().getSelectedIndex();
+
+            DaoPersona.modificar(controller.getPersona());
+
             listaPersonas.set(indice, controller.getPersona());
             tvTabla.getItems().set(indice, controller.getPersona());
         }

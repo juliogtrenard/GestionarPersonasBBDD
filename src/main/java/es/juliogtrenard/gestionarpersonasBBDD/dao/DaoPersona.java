@@ -83,4 +83,35 @@ public class DaoPersona {
             return -1;
         }
     }
+
+    /**
+     * Modifica los datos de una persona en la base de datos
+     *
+     * @param p Persona con datos nuevos
+     * @return True -> Modificada, False -> No modificada
+     */
+    public static boolean modificar(Persona p) {
+        DBConnect conexion;
+        PreparedStatement pstmt;
+
+        try {
+            conexion = new DBConnect();
+            String consulta = "UPDATE Persona SET nombre = ?,apellidos = ?,edad = ? WHERE id = ?";
+            pstmt = conexion.getConnection().prepareStatement(consulta);
+
+            pstmt.setString(1, p.getNombre());
+            pstmt.setString(2, p.getApellidos());
+            pstmt.setInt(3, p.getEdad());
+            pstmt.setInt(4, p.getId());
+
+            int filasAfectadas = pstmt.executeUpdate();
+
+            pstmt.close();
+            conexion.closeConexion();
+            return filasAfectadas > 0;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }
