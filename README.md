@@ -1,6 +1,6 @@
 # Título del proyecto
 
-GestionarPersonasV5
+GestionarPersonasBBDD
 
 ## Descripción
 
