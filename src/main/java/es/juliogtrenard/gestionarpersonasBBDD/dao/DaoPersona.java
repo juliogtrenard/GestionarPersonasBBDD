@@ -114,4 +114,31 @@ public class DaoPersona {
             return false;
         }
     }
+
+    /**
+     * Elimina una persona de la base de datos
+     *
+     * @param p Persona a eliminar
+     * @return True -> Elimina, False -> No eliminada
+     */
+    public  static boolean eliminar(Persona p){
+        DBConnect conexion;
+        PreparedStatement pstmt;
+
+        try {
+            conexion = new DBConnect();
+            String consulta = "DELETE FROM Persona WHERE (id = ?)";
+            pstmt = conexion.getConnection().prepareStatement(consulta);
+            pstmt.setInt(1, p.getId());
+            int filasAfectadas = pstmt.executeUpdate();
+            pstmt.close();
+            conexion.closeConexion();
+
+            return filasAfectadas > 0;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+            return false;
+        }
+    }
 }

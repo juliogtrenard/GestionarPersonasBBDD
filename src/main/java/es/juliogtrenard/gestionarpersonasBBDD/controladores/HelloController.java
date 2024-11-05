@@ -174,6 +174,7 @@ public class HelloController {
             return;
         }
 
+        DaoPersona.eliminar(personaSeleccionada);
         listaPersonas.remove(personaSeleccionada);
         tvTabla.getItems().remove(personaSeleccionada);
 
