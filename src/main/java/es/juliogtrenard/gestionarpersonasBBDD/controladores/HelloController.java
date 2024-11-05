@@ -1,6 +1,6 @@
-package es.juliogtrenard.gestionarpersonasv5.controladores;
+package es.juliogtrenard.gestionarpersonasBBDD.controladores;
 
-import es.juliogtrenard.gestionarpersonasv5.modelos.Persona;
+import es.juliogtrenard.gestionarpersonasBBDD.modelos.Persona;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +12,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -86,7 +85,7 @@ public class HelloController {
     @FXML
     public void agregarPersona(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/juliogtrenard/gestionarpersonasv5/modal.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/juliogtrenard/gestionarpersonasBBDD/modal.fxml"));
         Parent root = loader.load();
 
         stage.setScene(new Scene(root));
@@ -125,7 +124,7 @@ public class HelloController {
         }
 
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/juliogtrenard/gestionarpersonasv5/modal.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/juliogtrenard/gestionarpersonasBBDD/modal.fxml"));
         Parent root = loader.load();
 
         ControladorModal controller = loader.getController();

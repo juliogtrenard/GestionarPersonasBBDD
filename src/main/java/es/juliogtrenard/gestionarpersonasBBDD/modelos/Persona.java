@@ -1,4 +1,4 @@
-package es.juliogtrenard.gestionarpersonasv5.modelos;
+package es.juliogtrenard.gestionarpersonasBBDD.modelos;
 
 /**
  * Clase que representa a una persona con nombre, apellidos y edad.

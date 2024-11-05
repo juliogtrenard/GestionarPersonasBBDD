@@ -1,4 +1,4 @@
-package es.juliogtrenard.gestionarpersonasv5;
+package es.juliogtrenard.gestionarpersonasBBDD;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

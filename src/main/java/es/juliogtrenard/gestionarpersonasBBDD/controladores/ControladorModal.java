@@ -1,6 +1,6 @@
-package es.juliogtrenard.gestionarpersonasv5.controladores;
+package es.juliogtrenard.gestionarpersonasBBDD.controladores;
 
-import es.juliogtrenard.gestionarpersonasv5.modelos.Persona;
+import es.juliogtrenard.gestionarpersonasBBDD.modelos.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

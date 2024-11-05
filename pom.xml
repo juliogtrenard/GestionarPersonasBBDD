@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>es.juliogtrenard</groupId>
-    <artifactId>GestionarPersonasV5</artifactId>
+    <artifactId>GestionarPersonasBBDD</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>GestionarPersonasV3</name>
 
@@ -76,7 +76,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                es.juliogtrenard.gestionarpersonasv3/es.juliogtrenard.gestionarpersonasv5.HelloApplication
+                                es.juliogtrenard.gestionarpersonasv3/es.juliogtrenard.gestionarpersonasBBDD.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
